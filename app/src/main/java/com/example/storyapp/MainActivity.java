@@ -97,9 +97,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
+                    models.clear();
                     for (DataSnapshot d : snapshot.getChildren()) {
 //                        Toast.makeText(MainActivity.this, d.getValue().toString(), Toast.LENGTH_SHORT).show();
-                        models.add(new StoryModel(d.child("Username").getValue().toString(), d.child("Email").getValue().toString(), d.child("Story").getValue().toString()));
+                        models.add(new StoryModel(d.child("Username").getValue().toString(), d.child("Email").getValue().toString()
+                                , d.child("Story").getValue().toString(), d.child("Location").getValue().toString()));
                     }
                     rv.setAdapter(new StoryAdapter(models));
                     rv.setLayoutManager(new LinearLayoutManager(MainActivity.this));

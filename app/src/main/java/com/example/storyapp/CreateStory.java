@@ -154,6 +154,7 @@ public class CreateStory extends AppCompatActivity {
                                         ref.child("Username").setValue(uname);
                                         ref.child("Email").setValue(email);
                                         ref.child("Story").setValue(path);
+                                        ref.child("Location").setValue(location);
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override

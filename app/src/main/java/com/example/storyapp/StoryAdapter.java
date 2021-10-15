@@ -35,6 +35,7 @@ public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.ViewHolder> 
                 i.putExtra("name",data.get(position).name);
                 i.putExtra("email",data.get(position).email);
                 i.putExtra("story",data.get(position).story);
+                i.putExtra("loc",data.get(position).loc);
                 holder.itemView.getContext().startActivity(i);
             }
         });
